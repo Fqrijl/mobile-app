@@ -1,0 +1,24 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "sender": {
+      "type": "string",
+      "enum": ["user", "admin"]
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false
+    },
+    "attachment_url": {
+      "type": "string"
+    }
+  },
+  "required": ["user_email", "message", "sender"]
+}

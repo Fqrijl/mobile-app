@@ -1,0 +1,51 @@
+{
+  "name": "FlashSale",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string",
+      "description": "ID produk flash sale"
+    },
+    "discount_percentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Persentase diskon"
+    },
+    "flash_price": {
+      "type": "number",
+      "description": "Harga flash sale"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Waktu mulai flash sale"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Waktu berakhir flash sale"
+    },
+    "stock_available": {
+      "type": "number",
+      "description": "Stok khusus untuk flash sale"
+    },
+    "stock_sold": {
+      "type": "number",
+      "default": 0,
+      "description": "Jumlah terjual"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Status aktif flash sale"
+    }
+  },
+  "required": [
+    "product_id",
+    "flash_price",
+    "start_date",
+    "end_date",
+    "stock_available"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string",
+      "description": "ID produk yang direview"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Nama produk"
+    },
+    "user_email": {
+      "type": "string",
+      "description": "Email user yang memberikan review"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Nama user yang memberikan review"
+    },
+    "rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Rating 1-5 bintang"
+    },
+    "comment": {
+      "type": "string",
+      "description": "Komentar review"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Foto review dari user"
+    },
+    "size_purchased": {
+      "type": "string",
+      "description": "Ukuran yang dibeli"
+    },
+    "verified_purchase": {
+      "type": "boolean",
+      "default": false,
+      "description": "Apakah pembelian terverifikasi"
+    }
+  },
+  "required": ["product_id", "user_email", "rating"]
+}

@@ -1,0 +1,116 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "order_number": {
+      "type": "string"
+    },
+    "user_email": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "product_image": {
+            "type": "string"
+          },
+          "size": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "price": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "shipping_cost": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "shipping_address": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "province": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        }
+      }
+    },
+    "courier": {
+      "type": "string",
+      "enum": ["regular", "express", "cargo"]
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": ["bank_transfer", "va", "qris", "ewallet", "cod"]
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": ["pending", "paid", "failed", "expired"],
+      "default": "pending"
+    },
+    "order_status": {
+      "type": "string",
+      "enum": ["pending", "processing", "shipped", "delivered", "cancelled"],
+      "default": "pending"
+    },
+    "tracking_number": {
+      "type": "string"
+    },
+    "tracking_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "payment_deadline": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": ["order_number", "user_email", "items", "total"]
+}

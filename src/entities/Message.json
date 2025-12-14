@@ -1,0 +1,38 @@
+{
+  "name": "Message",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email user yang mengirim pesan"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Nama user"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Subjek pesan"
+    },
+    "message": {
+      "type": "string",
+      "description": "Isi pesan"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "replied", "closed"],
+      "default": "pending",
+      "description": "Status pesan"
+    },
+    "admin_reply": {
+      "type": "string",
+      "description": "Balasan dari admin"
+    },
+    "replied_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Waktu dibalas"
+    }
+  },
+  "required": ["user_email", "message"]
+}

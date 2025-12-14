@@ -1,0 +1,111 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nama produk"
+    },
+    "price": {
+      "type": "number",
+      "description": "Harga produk"
+    },
+    "original_price": {
+      "type": "number",
+      "description": "Harga asli sebelum diskon"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["men", "women", "unisex"],
+      "description": "Kategori gender"
+    },
+    "subcategory": {
+      "type": "string",
+      "description": "Subkategori produk"
+    },
+    "type": {
+      "type": "string",
+      "description": "Tipe produk spesifik"
+    },
+    "description": {
+      "type": "string",
+      "description": "Deskripsi produk"
+    },
+    "material": {
+      "type": "string",
+      "description": "Bahan produk"
+    },
+    "care_instructions": {
+      "type": "string",
+      "description": "Petunjuk perawatan"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URL gambar produk"
+    },
+    "colors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "hex": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sizes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Ukuran tersedia"
+    },
+    "size_chart": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "string"
+          },
+          "chest": {
+            "type": "number"
+          },
+          "length": {
+            "type": "number"
+          },
+          "shoulder": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "stock": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      },
+      "description": "Stok per ukuran"
+    },
+    "is_bestseller": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_new_arrival": {
+      "type": "boolean",
+      "default": false
+    },
+    "weight": {
+      "type": "number",
+      "description": "Berat dalam gram"
+    }
+  },
+  "required": ["name", "price", "category"]
+}
